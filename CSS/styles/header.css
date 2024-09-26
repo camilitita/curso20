@@ -1,0 +1,75 @@
+header {
+   /*Grid sirve para crear un sistema de 
+    filas o columnas*/
+    display: grid;
+    /*Sirve para indicar cuanas columnas quiero y su tamaño*/
+
+    grid-template-columns: 1fr 1fr ;
+    padding: 20px;
+    background: linear-gradient(90deg, deepskyblue, rgb(5, 5, 174));
+    background-size: 400% 400%;
+    animation: fondo 15s ease infinite;
+}
+
+header > div > img {
+    width: 80%;
+}
+
+.izquierda{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.izquierda > h1 {
+    color: white;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.izquierda > h2 {
+    color: white;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.izquierda > div {
+    display: flex;
+    gap: 0;
+}
+
+.izquierda > div > input {
+    border-radius: 25px 0 0 25px;
+    border: none;
+}
+
+.izquierda > div > button {
+    
+    border-radius: 0 25px 25px 0;
+    border: none;
+    background: white;
+    color: deepskyblue;
+    font-weight: 600;
+    border-left: 5px solid deepskyblue;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.derecha{
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+   
+}
+@keyframes fondo {
+    0%{
+      background-position:0% 50%;
+    }
+    50%{
+      background-position:100% 50%;
+    }
+    100%{
+      background-position:0% 50%;
+    }
+  }
