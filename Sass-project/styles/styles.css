@@ -1,0 +1,117 @@
+* {
+  font-family: Karla;
+}
+
+body {
+  background-color: black;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  height: 100vh;
+  background-color: black;
+}
+
+#content > .side-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100vh;
+  padding: 10px;
+  position: relative;
+}
+#content > .side-bar ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-grow: 1;
+  padding: 0;
+  gap: 10px;
+}
+#content > .side-bar ul li a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+  padding: 12px 20px;
+  text-align: left;
+  width: 100%;
+}
+#content > .side-bar ul li a:hover {
+  background-color: rgba(81, 79, 79, 0.427);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+#content > .side-bar ul li a:hover svg {
+  transform: scale(1.1);
+}
+#content > .side-bar ul li a svg {
+  transition: transform 0.3s ease;
+}
+#content > .side-bar ul li a img {
+  transition: transform 0.3s ease;
+}
+#content > .side-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 1px;
+  background-color: rgb(160, 153, 153);
+}
+
+#content > .side-bar > a > svg {
+  align-self: center;
+  color: white !important;
+  padding: 12px 25px 16px 12px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+span {
+  font-size: 18px;
+  padding-left: 16px;
+}
+
+img {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+#content > .side-bar > u {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#content > .side-bar > u a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+  padding: 12px 20px;
+  text-align: left;
+  width: 100%;
+}
+#content > .side-bar > u a:hover {
+  background-color: rgba(81, 79, 79, 0.427);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+#content > .side-bar > u a:hover svg {
+  transform: scale(1.1);
+}
+#content > .side-bar > u a svg {
+  transition: transform 0.3s ease;
+}
+#content > .side-bar > u a img {
+  transition: transform 0.3s ease;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,109 @@
+$background-color: black
+$icons-color: white
+$sidebar-width: 220px
+$hover-background-color: rgba(81, 79, 79, 0.427)
+$hover-icon-scale: 1.1
+$hover-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+$transition-duration: 0.3s
+
+@mixin center ()
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin menu ()
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
+
+@mixin space ($padding: 12px, $margin: 0 4px 4px 0)
+  padding: $padding
+  margin: $margin
+
+@mixin hover-effect ()
+  transition: transform $transition-duration ease, box-shadow $transition-duration ease, background-color $transition-duration ease
+  border-radius: 8px
+  padding: 12px 20px
+  text-align: left
+  width: 100%
+  &:hover
+    background-color: $hover-background-color
+    box-shadow: $hover-box-shadow
+    svg
+      transform: scale($hover-icon-scale)
+*
+  font-family: Karla
+
+body
+  background-color: $background-color
+
+#content
+  display: grid
+  grid-template-columns: $sidebar-width 1fr
+  height: 100vh
+  background-color: $background-color
+
+
+#content > .side-bar
+  @include menu
+  height: 100vh
+  padding: 10px
+  position: relative
+  ul
+    @include menu ()
+    flex-grow: 1
+    padding: 0
+    gap: 10px
+    li
+      a
+        @include hover-effect()
+        svg
+          transition: transform $transition-duration ease
+        img
+          transition: transform $transition-duration ease
+
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    height: 100%
+    width: 1px
+    background-color: rgb(160, 153, 153)
+
+#content > .side-bar > a > svg
+  align-self: center
+  color: $icons-color!important
+  padding: 12px 25px 16px 12px
+  margin-bottom: 20px
+  margin-top: 20px
+
+a
+  display: flex
+  align-items: center
+  color: $icons-color
+  text-decoration: none
+
+span
+  font-size: 18px
+  padding-left: 16px
+
+img
+  border-radius: 50%
+  width: 24px
+  height: 24px
+
+#content > .side-bar > u
+  @include menu ()
+  padding-top: 20px
+  padding-bottom: 20px
+  a
+    @include hover-effect
+    svg
+      transition: transform $transition-duration ease
+    img
+      transition: transform $transition-duration ease
+
+
+

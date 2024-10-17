@@ -1,0 +1,51 @@
+/*variable*/
+
+$base-color: blue
+
+#inicial
+  color: $base-color
+  p
+    background-color: red
+
+@mixin columna($horizontal: center, $vertical: center)
+  display: flex
+  flex-direction: column
+  justify-content: $vertical
+  align-items: $horizontal
+
+@mixin grid($columnas)
+  display: grid
+  grid-template-columns: $columnas
+
+@mixin display($display, $justify, $align, $columnass)
+  display: $display
+  @if $display == grid
+    grid-template-columns: $columnass
+  @if $display == flex
+    justify-content: $justify
+    align-items: $align
+
+
+
+*
+  margin: 0
+  padding: 0
+
+.columna-centrada
+  @include columna()
+  height: 10vh
+
+.columna-top
+  @include columna(center, flex-start)
+  height: 10vh
+
+.blogs
+  @include grid(1fr 1fr 1fr)
+  .blog
+    @include columna(center, flex-start)
+
+
+
+
+
+

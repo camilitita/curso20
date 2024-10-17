@@ -1,0 +1,17 @@
+header {
+  font-family: "Source Code Pro", monospace;}
+
+Body > div > h1 {
+  font-family: "Plus Jakarta Sans", sans-serif;}
+
+Body > div > div > h1 {
+  font-family: "Source Code Pro", monospace;
+  font-weight: 600;}
+
+Body > div > div > h2 {
+  font-family: "Source Code Pro", monospace;
+}
+
+Body > div > div > div > h2 {
+  font-family: "Source Code Pro", monospace;
+}
