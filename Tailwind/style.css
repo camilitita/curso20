@@ -1,12 +1,25 @@
+/*create a variable*/
+:root {
+  --primary-color: #240046;
+  --secondary-color: #3c096c;
+  --tertiary-color: #5a189a;
+  --quaternary-color: #7b2cbf;
+  --quinary-color: #9d4edd;
+  font-size: 16px;
+}
+
 header {
-  font-family: "Source Code Pro", monospace;}
+  font-family: "Source Code Pro", monospace;
+}
 
 Body > div > h1 {
-  font-family: "Plus Jakarta Sans", sans-serif;}
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
 
 Body > div > div > h1 {
   font-family: "Source Code Pro", monospace;
-  font-weight: 600;}
+  font-weight: 600;
+}
 
 Body > div > div > h2 {
   font-family: "Source Code Pro", monospace;
@@ -14,4 +27,60 @@ Body > div > div > h2 {
 
 Body > div > div > div > h2 {
   font-family: "Source Code Pro", monospace;
+}
+
+.loader {
+  font-family: "Source Code Pro", monospace;
+  /*Load animation only once*/
+  animation: loader-background 5s forwards;
+}
+
+.loader::before {
+  content: "Loading";
+  animation: loader 5s forwards;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@keyframes loader-background {
+  0% {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #240046;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 1000;
+  }
+  100% {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: #240046;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 1000;
+  }
+}
+
+@keyframes loader {
+  0% {
+    content: "Loading";
+  }
+  25% {
+    content: "Loading.";
+  }
+  50% {
+    content: "Loading..";
+  }
+  75% {
+    content: "Loading...";
+  }
+  100% {
+    content: "Ready";
+  }
 }
