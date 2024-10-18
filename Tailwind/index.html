@@ -19,21 +19,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
     <style>
-      @keyframes gradientAnimation {
+      @keyframes auraAnimation {
         0% {
-          background-position: 0% 50%;
+          background-position: 50% 50%;
+          background-size: 100% 100%;
         }
         50% {
-          background-position: 100% 50%;
+          background-size: 150% 150%;
         }
         100% {
-          background-position: 0% 50%;
+          background-position: 50% 50%;
+          background-size: 100% 100%;
         }
       }
       .animated-gradient {
-        background: linear-gradient(270deg, #240046, #9d4edd);
-        background-size: 400% 400%;
-        animation: gradientAnimation 12s ease infinite;
+        background: radial-gradient(circle, #240046, #9d4edd, #5a189a);
+        background-size: 150% 150%;
+        animation: auraAnimation 8s ease-in-out infinite;
       }
     </style>
   </head>
@@ -49,11 +51,10 @@
         </span>
       </div>
     </header>
-    <div class="flex flex-col justify-center h-3/5 items-center space-y-6">
+    <div class="flex flex-col justify-center h-3/5 items-center space-y-6 px-5">
       <h1 class="text-white text-6xl md:text-8xl">Camila Castillo</h1>
       <div
-        class="flex flex-col items-center space-y-3 md:flex-row md:space-x-4 md:space-y-0"
-      >
+        class="flex flex-col items-center space-y-3 md:flex-row md:space-x-4 md:space-y-0">
         <div class="flex space-x-4">
           <h2 class="text-white text-lg md:text-2xl whitespace-nowrap">
             //web developer
@@ -67,20 +68,76 @@
         </h2>
       </div>
     </div>
-    <div
-      class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8 justify-center items-start h-full"
-    >
-      <div class="text-justify pl-14 pt-10 sm:pl-12 pr-10">
-        <h1 class="text-white text-4xl pr-2 md:text-6xl relative">
-          Hi, i create websites so you don't have to!
-          <div
-            class="absolute bottom-[-3.6rem] left-1/2 transform -translate-x-1/2 h-0.5 w-full bg-[#faf5ff]"
-          ></div>
-        </h1>
+    <div class="flex flex-col justify-center items-center h-3/5 px-5 space-y-6 py-8">
+      <div class="bg-white/10 rounded-lg p-2 pr-8 flex flex-col
+        md:flex-row justify-center items-center space-y-6
+        md:space-y-0
+        md:space-x-6 w-full max-w-6xl">
+        <div class="flex-basis-[55%] flex-grow">
+          <div class="text-center pt-10 md:text-justify sm:p-10">
+            <h1 class="typewriter text-white text-4xl md:text-6xl relative">
+              Hi, I create websites so you don't have to!
+            </h1>
+          </div>
+        </div>
+        <div class="flex-basis-[45%] flex justify-center items-center p-4">
+          <img src="img/me.png" alt="me" class=" w-48 md:w-96 h-auto"/>
+        </div>
       </div>
-      <div class="justify-items-center justify-self-center">
-        <img src="img/me.png" alt="me" class="w-60 h-auto" />
+    </div>
+    
+    <div class="container mx-auto py-12">
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-8">
+        <div class="flex flex-col justify-center items-center">
+          <h2 class="text-white text-4xl md:text-5xl font-bold">
+            My Work
+          </h2>
+          <h3 class="text-white text-center text-xl md:text-2xl md:text-justify p-4">
+            I enjoy creating clean, intuitive interfaces that allow users to have a smooth experience (also, they're easy on the eyes!)
+          </h3>
+        </div>
+        
+        <!-- Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 p-4">
+          
+          <!-- Card 1 -->
+          <div class="card w-100 bg-white shadow-md rounded-lg
+          overflow-hidden">
+            <div class="card-inner">
+              <div class="card-front">
+                <p class="text-gray-800 text-xl font-bold">Project 1</p>
+              </div>
+              <div class="card-back">
+                <img src="img/project1.pg" alt="Project 1" class="w-full h-48 object-cover rounded-t-lg">
+              </div>
+            </div>
+          </div>
+    
+          <!-- Card 2 -->
+          <div class="bg-white/10 p-5 rounded-lg"> 
+            <img src="img/project2.png" alt="Project 2" class="w-full h-48 object-cover rounded-t-lg">
+            <h3 class="text-white text-xl font-bold mt-4">Project 2</h3>
+            <p class="text-gray-300 mt-2">A description of the project goes here.</p>
+          </div>
+    
+          <!-- Card 3 -->
+          <div class="bg-white/10 p-5 rounded-lg">
+            <img src="img/project3.png" alt="Project 3" class="w-full h-48 object-cover rounded-t-lg">
+            <h3 class="text-white text-xl font-bold mt-4">Project 3</h3>
+            <p class="text-gray-300 mt-2">A description of the project goes here.</p>
+          </div>
+    
+          <!-- Card 4 -->
+          <div class="bg-white/10 p-5 rounded-lg">
+            <img src="img/project4.png" alt="Project 4" class="w-full h-48 object-cover rounded-t-lg">
+            <h3 class="text-white text-xl font-bold mt-4">Project 4</h3>
+            <p class="text-gray-300 mt-2">A description of the project goes here.</p>
+          </div>
+        
+        </div>
       </div>
+    </div>
+
     </div>
   </body>
 </html>
