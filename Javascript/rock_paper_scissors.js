@@ -30,6 +30,7 @@ while (repeat) {
         times_user_won++;
         return "You won!";
       } else {
+        times_cpu_won++;
         return "You lost, sorry :(";
       }
     }
@@ -42,7 +43,7 @@ while (repeat) {
         if (options.includes(user_choice)) {
           break;
         } else {
-          console.log("Please enter a valid option!")
+          console.log("Please enter a valid option!");
         }
       }
       const cpu_choice_final = cpu_choice();
@@ -51,13 +52,14 @@ while (repeat) {
 
       times_played++;
       console.log(`Times played: ${times_played}`);
-      console.log(`Times you won: ${times_user_won}}`);
+      console.log(`Times you won: ${times_user_won}`);
+      console.log(`Times you lost: ${times_cpu_won}`);
     }
 
     game();
 
 
-    let repeat = prompt("Would you like to play again?(yes/no)");
+    repeat = prompt("Would you like to play again?(yes/no)");
     if (repeat !== "yes"){
       repeat=false;
       console.log("Veeery well then, see you later bud");
