@@ -1,3 +1,7 @@
+/*Made by: Camila Castillo teaming up with
+Johanny Colmenares and Franciely
+*/
+
 class calculator {
   constructor (){
   }
@@ -16,6 +20,7 @@ class calculator {
   divition (a,b) {
     if (b===0) {
       alert ("Opción inválida");
+      return;
     }
     return a / b;
   }
