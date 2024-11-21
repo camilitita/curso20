@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="flex items-center justify-center bg-sky-300 w-full h-screen">
+    <div class="w-full h-auto bg-gray-50 rounded shadow-lg p-8 m-8 md:max-w-lg">
+      <h1 class="block w-full text-center text-grey-darkest mb-6 font-bold text-xl">Sing Up Form</h1>
+      <div class="mb-8 md:flex md:flex-wrap md:justify-between" id="sing_up">
+        <div class="flex flex-col mb-4 md:w-1/2">
+          <label class="mb-2 tracking-wide font-bold text-lg text-gray-600" for="first_name">First Name</label>
+          <input class="border rounded-lg py-2 px-3 text-grey-darkest md:mr-2" placeholder="Henry" type="text"
+          id="first_name">
+        </div>
+        <div class="flex flex-col mb-4 md:w-1/2">
+          <label class="mb-2 font-bold text-lg text-gray-600 md:ml-2" for="last_name">Last Name</label>
+          <input class="border rounded-lg py-2 px-3 text-grey-darkest md:ml-2" placeholder="Moreno" type="text"
+          id="last_name">
+        </div>
+        <div class="flex flex-col mb-4 md:w-full">
+          <label class="mb-2 font-bold text-lg text-gray-600" for="email">E-mail Account</label>
+          <input class="border rounded-lg  py-2 px-3 text-grey-darkest" placeholder="example@exampledomain.com"
+          type="text" id="email">
+        </div>
+        <div class="flex flex-col mb-4">
+          <label class="mb-2 font-bold text-lg text-gray-600" for="user_password">Password</label>
+          <input class="border rounded-lg py-2 px-3 text-grey-darkest" type="password" id="user_password">
+        </div>
+        <div class="flex flex-col mb-4">
+          <label class="mb-2 font-bold text-lg text-gray-600" for="password_confirm">Password Confirmation</label>
+          <input class="border rounded-lg py-2 px-3 text-grey-darkest" type="password" id="password_confirm">
+        </div>
+        <div class="w-full flex justify-center mt-4">
+          <button class="group relative m-1 cursor-pointer overflow-hidden rounded-md border-2
+          border-sky-500 px-5 py-3 text-lg font-bold" type="submit">
+            <span class="ease absolute top-1/2 h-0 w-64 origin-center -translate-x-20 rotate-45 bg-sky-500 transition-all
+            duration-300 group-hover:h-64 group-hover:-translate-y-32"></span>
+            <span class="ease relative text-sky-500 transition duration-300 group-hover:text-white">Create Account</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
