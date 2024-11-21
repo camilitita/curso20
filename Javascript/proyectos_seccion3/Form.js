@@ -1,4 +1,4 @@
-document.querySelector('form').addEventListener('submit', function (event) {
+document.getElementById('singup').addEventListener('submit', function (event) {
   event.preventDefault();
 
 
@@ -59,9 +59,8 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
   if (correct_input) {
     alert("Form submitted successfully!");
-    this.submit();
+    event.target.submit();
   }
-  const formData = new FormData(this);
 });
 
 
