@@ -11,7 +11,7 @@ document.getElementById('singup').addEventListener('submit', function (event) {
 
   let namevalid = /^[A-Za-z\s]+$/;
   let emailvalid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  let passwordvalid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  let passwordvalid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*\.?&])[A-Za-z\d@$!\.%*?&]{8,}$/;
 
 
   let correct_input = true;
@@ -19,16 +19,19 @@ document.getElementById('singup').addEventListener('submit', function (event) {
   if (!namevalid.test(firstname)) {
     alert('Please submit a valid first name.');
     correct_input = false;
+    return;
   }
 
   if (!namevalid.test(lastname)) {
     alert('Please submit a valid last name.');
     correct_input = false;
+    return;
   }
 
   if (!emailvalid.test(email)) {
     alert('Please submit a valid email address.');
     correct_input = false;
+    return;
   }
 
   const errors = [];
@@ -46,15 +49,18 @@ document.getElementById('singup').addEventListener('submit', function (event) {
       errors.push("Password must include at least one digit.");
     }
     if (!/[@$!%*?&]/.test(password)) {
-      errors.push("Password must include at least one special character (@, $, !, %, *, ?, &).");
+      errors.push("Password must include at least one special character (@, $, !, %, *, ?, &, .).");
     }
 
     alert("Your password is invalid because:\n\n" + errors.join("\n"));
     correct_input = false;
+    return;
   }
 
   if (password !== passwordconfirm) {
-    errors.push("Passwords must be the same!.");
+    errors.push('Passwords should be the same');
+    alert(errors.join());
+    return;
   }
 
   if (correct_input) {
