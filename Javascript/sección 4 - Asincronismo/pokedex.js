@@ -55,7 +55,7 @@ ListaPoke.append(div)
 }
 
 buttonheader.forEach(boton => boton.addEventListener("click", async (event) => {
-    const botonId = event.currentTarget.id;
+    const botonId = event.currentTarget.id.toLowerCase();
     ListaPoke.innerHTML = "";
 
     if (botonId === "see-all") {
