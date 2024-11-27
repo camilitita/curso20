@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-stone-200">
+    <header class="py-4 shadow-md shadow-gray-300" >
+        <nav class="flex flex-col gap-4 items-start ps-3 pe-3
+        max-w-5xl my-0 mx-auto py-6">
+            <img src="logo.png" alt="logo-pokedex">
+            <ul class="flex items-center flex-wrap gap-2">
+                <li><button class="btn-header bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400
+                hover:scale-110 ease-in-out duration-150" id="see-all">See all</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150 normal" id="Normal">Normal</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150 fire" id="Fire">Fire</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150 water" id="Water">Water</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150 grass" id="Grass">Grass</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150 electric" id="Electric">Electric</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150 ice" id="Ice">Ice</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150" id="Fighting">Figthing</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150" id="Poison">Poison</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150" id="Ground">Ground</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150" id="Flying">Flying</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400  hover:scale-110 ease-in-out duration-150" id="Psychic">Psychic</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150" id="Bug">Bug</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150 " id="Rock">Rock</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150" id="Ghost">Ghost</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150" id="Dark">Dark</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150" id="Dragon">Dragon</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                    uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150" id="Steel">Steel</button></li>
+                <li><button class="bg-stone-200 p-2 rounded-full cursor-pointer
+                    uppercase font-semibold shadow shadow-gray-400 hover:scale-110 ease-in-out duration-150" id="Fairy">Fairy</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="p-6 max-w-5xl my-0 mx-auto ">
+
+        <div id="All">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3" id="pokemon-list">
+                <!-- <div class="bg-slate-50 rounded-2xl shadow-md
+                shadow-gray-300 uppercase relative isolate overflow-hidden" id="pokemon-card">
+                    <p class="absolute left-1/2 -translate-x-2/4
+                    top-4 text-8xl font-semibold text-slate-300 -z-10" id="pokemon-number">#025</p>
+                    <div class="py-4 flex justify-center" id="pokemon-imagen">
+                        <img class="w-full max-w-24" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+                        alt="Pikachu">
+                    </div>
+                    <div class="flex flex-col gap-2 py-4
+                    items-center text-center" id="pokemon-info">
+                        <div class="flex items-center gap-x-2 flex-wrap justify-center" id="nombre-container">
+                            <p class="bg-stone-200 py-1 px-2 rounded-full
+                            font-semibold text-xs" id="pokemon-id">#025</p>
+                            <h2 class="text-2xl font-semibold" id="pokemon-name">Pikachu</h2>
+                        </div>
+                        <div class="flex gap-2 text-xs font-medium
+                        flex-wrap justify-center" id="pokemon-type">
+                            <p class="py-1 px-2 rounded-full" id="electric">ELECTRIC</p>
+                            <p class="py-1 px-2 rounded-full" id="fighting">FIGHTING</p>
+                        </div>
+                        <div class="flex text-sm gap-4" id="pokemon-stats">
+                            <p id="height">40cm</p>
+                            <p id="weight">25kg</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </main>
+
+    <script src="pokedex.js"></script>
+</body>
+</html>
