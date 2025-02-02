@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Registro e Inicio de Sesión</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @layer utilities {
+            .bg-custom-green {
+            background-color: #adc178;
+        }
+            .custom-green {
+            color: #adc178;
+            }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen bg-[url('workspace.jpg')]
+bg-cover">
+    <div class="max-w-4xl h-4/6 flex rounded-2xl shadow-lg transition-all duration-1000 ease
+    m-2.5" id="container-form">
+        <div class="w-2/5 flex items-center text-center bg-custom-green
+        rounded-l-3xl" id="information">
+            <div class="w-full px-6" id="info-child">
+                <h2 class="text-4xl">Bienvenido</h2>
+                <p class="mx-3.5 my-3.5" >Si deseas unirte, por favor inicia sesión con tus datos</p>
+                <button class="group relative inline-flex items-center overflow-hidden rounded-full border-2 border-emerald-800 px-12 py-3 text-emerald-800
+                text-emerald-800 bg-transparent transition-all duration-300 hover:bg-gray-50 hover:custom-green">
+                    <span class="absolute left-0 top-1/2 block h-0 w-full bg-emerald-800 transition-all duration-500 ease-in-out group-hover:top-0 group-hover:h-full"></span>
+                    <span class="absolute right-0 flex h-10 w-10 translate-x-full transform items-center justify-start duration-500 ease-in-out group-hover:-translate-x-2">
+                        <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </span>
+                    <span class="relative transform duration-700 ease-in-out group-hover:-translate-x-3">Iniciar Sesión</span>
+                </button>
+            </div>
+        </div>
+        <div id="form-info">
+            <div id="form-info-child">
+                <h2>Crear una Cuenta</h2>
+                <div id="icons">
+                    <i class='bx bxl-google'></i>
+                    <i class='bx bxl-github'></i>
+                    <i class='bx bxl-linkedin' ></i>
+                </div>
+                <p>O utiliza tu email para registrarte</p>
+                <form>
+                    <label>
+                        <i class='bx bx-user' ></i>
+                        <input type="text" placeholder="Nombre Usuario" name="userName">
+                    </label>
+                    <label>
+                        <i class='bx bx-envelope' ></i>
+                        <input type="email" placeholder="Correo Electronico" name="userEmail">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" placeholder="Contraseña" name="userPassword">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" placeholder="Confirmar contraseña" name="userPassword">
+                    </label>
+                    <input type="submit" value="Registrarse" id="register">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
