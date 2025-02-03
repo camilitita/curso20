@@ -6,25 +6,21 @@ import ButtonP from '../components/general/Button-project';
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
-    // Aquí va la lógica de autenticación
+    
+        // Retrieve stored user from localStorage
         const storedUser = JSON.parse(localStorage.getItem("user"));
-
+    
         if (storedUser && username === storedUser.email && password === storedUser.password) {
             console.log("Login successful");
-        navigate('/home'); // Para redirigir solo si el login es existoso
+          navigate('/home'); // Redirect only if user exists and credentials match
         } else {
             alert("Invalid username or password. Please try again or register.");
         }
-    };
-    console.log('Username:', username);
-    console.log('Password:', password);
-  // Navegar a la página de inicio después del login
-    navigate('/home');
+        };
 
 
 return (
@@ -65,7 +61,7 @@ return (
                 </div>
                 <div className="flex-col items-center justify-between space-y-4">
                     <ButtonP type="submit">Log in</ButtonP>
-                    <ButtonP onClick={() => navigate('/register')}>
+                    <ButtonP>
                     New Here? Register
                     </ButtonP>
                 </div>
