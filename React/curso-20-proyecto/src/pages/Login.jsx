@@ -10,10 +10,10 @@ const Login = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-    
+
         // Retrieve stored user from localStorage
         const storedUser = JSON.parse(localStorage.getItem("user"));
-    
+
         if (storedUser && username === storedUser.email && password === storedUser.password) {
             console.log("Login successful");
             navigate('/home'); // Redirect only if user exists and credentials match
@@ -26,6 +26,7 @@ const Login = () => {
         navigate('/register'); // Redirige a la página de registro
     };
 
+<<<<<<< Updated upstream
     return (
         <div
             className="min-h-screen flex items-center justify-center bg-cover bg-center" 
@@ -33,6 +34,15 @@ const Login = () => {
                 backgroundImage: 'url(https://images4.alphacoders.com/133/thumb-1920-1335140.jpg)'
             }}>
             <motion.div
+=======
+return (
+    <div
+    className="min-h-screen flex items-center justify-center bg-cover bg-center"
+    style={{
+        backgroundImage: 'url(https://images4.alphacoders.com/133/thumb-1920-1335140.jpg)'
+    }}>
+    <motion.div
+>>>>>>> Stashed changes
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -70,8 +80,32 @@ const Login = () => {
                         </div>
                     </form>
                 </div>
+<<<<<<< Updated upstream
             </motion.div>
         </div>
+=======
+                <div className="mb-6">
+                <label className="block text-white text-sm font-bold mb-2" htmlFor="password">
+                Password
+                </label>
+                <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="shadow appearance-none border border-green-600 rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"/>
+                </div>
+                <div className="flex-col items-center justify-between space-y-4">
+                    <ButtonP type="submit">Log in</ButtonP>
+                    <ButtonP type="button" onClick={() => navigate('/Register')}>
+                    New Here? Register
+                    </ButtonP>
+                </div>
+            </form>
+        </div>
+    </motion.div>
+    </div>
+>>>>>>> Stashed changes
     );
 };
 

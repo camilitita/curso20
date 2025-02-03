@@ -27,7 +27,7 @@ function Register() {
         e.preventDefault();
         localStorage.setItem("user", JSON.stringify(DatafromForm));
         alert("Registro exitoso!");
-        navigate('/login')
+        navigate('/')
     };
     return (
         <div className="min-h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: 'url(https://images5.alphacoders.com/128/1285059.jpg)' }}>
