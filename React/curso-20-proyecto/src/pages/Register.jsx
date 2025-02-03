@@ -2,6 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";	
 import ButtonP from "../components/general/Button-project";
 import '../App.css';
 import '../index.css';
@@ -14,6 +15,8 @@ function Register() {
         email: "",
         password: "",
     });
+    const navigate = useNavigate();
+
     const handleData = (e) => {
         setDatafromForm({
             ...DatafromForm,
@@ -24,6 +27,7 @@ function Register() {
         e.preventDefault();
         localStorage.setItem("user", JSON.stringify(DatafromForm));
         alert("Registro exitoso!");
+        navigate('/login')
     };
     return (
         <div className="min-h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: 'url(https://images5.alphacoders.com/128/1285059.jpg)' }}>

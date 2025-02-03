@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import React from 'react';
 
 const Home = () => {
   const [characters, setCharacters] = useState([]);
