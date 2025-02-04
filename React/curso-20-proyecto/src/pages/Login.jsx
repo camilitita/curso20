@@ -23,6 +23,7 @@ const Login = () => {
     };
 
     const handleRegister = () => {
+        console.log("Navigating to /register");
         navigate('/register'); // Redirige a la página de registro
     };
 
@@ -37,7 +38,7 @@ const Login = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="max-w-md w-full bg-transparent p-6 rounded-lg shadow-lg">
-                <div className="max-w-md mx-auto p-4 rounded-md bg-black/70 text-white shadow-xl shadow-black/60">
+                <div className="max-w-md mx-auto p-4 rounded-md bg-black/70 text-white shadow-xl shadow-black/60 space-y-4">
                     <h1 className="text-4xl font-handjet font-medium text-center mb-4 text-rickgreen">Login</h1>
                     <form onSubmit={handleLogin}>
                         <div className="mb-4">
@@ -64,11 +65,12 @@ const Login = () => {
                         </div>
                         <div className="flex-col items-center justify-between space-y-4">
                             <ButtonP type="submit">Log in</ButtonP>
-                            <ButtonP onClick={handleRegister}>
-                                New Here? Register
-                            </ButtonP>
                         </div>
                     </form>
+
+                    <ButtonP onClick={handleRegister}>
+                    New Here? Register
+                    </ButtonP>
                 </div>
             </motion.div>
         </div>
