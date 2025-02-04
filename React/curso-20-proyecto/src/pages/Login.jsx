@@ -29,7 +29,7 @@ const Login = () => {
 
     return (
         <div
-            className="min-h-screen flex items-center justify-center bg-cover bg-center" 
+            className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-cover bg-center"
             style={{
                 backgroundImage: 'url(https://images4.alphacoders.com/133/thumb-1920-1335140.jpg)'
             }}>
@@ -38,7 +38,7 @@ const Login = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="max-w-md w-full bg-transparent p-6 rounded-lg shadow-lg">
-                <div className="max-w-md mx-auto p-4 rounded-md bg-black/70 text-white shadow-xl shadow-black/60 space-y-4">
+                <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg bg-black/70 p-6 sm:p-8 rounded-lg shadow-lg shadow-black/60 space-y-4">
                     <h1 className="text-4xl font-handjet font-medium text-center mb-4 text-rickgreen">Login</h1>
                     <form onSubmit={handleLogin}>
                         <div className="mb-4">
@@ -50,7 +50,7 @@ const Login = () => {
                                 id="username"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
-                                className="shadow appearance-none border border-green-600 rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"/>
+                                className="w-full border border-green-600 rounded py-2 px-3 text-white bg-transparent focus:outline-none focus:ring-2 focus:ring-green-500"/>
                         </div>
                         <div className="mb-6">
                             <label className="block text-white text-sm font-bold mb-2" htmlFor="password">
@@ -61,14 +61,14 @@ const Login = () => {
                                 id="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                className="shadow appearance-none border border-green-600 rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"/>
+                                className="w-full border border-green-600 rounded py-2 px-3 text-white bg-transparent focus:outline-none focus:ring-2 focus:ring-green-500"/>
                         </div>
-                        <div className="flex-col items-center justify-between space-y-4">
+                        <div className=" w-full flex-col items-center justify-between space-y-4">
                             <ButtonP type="submit">Log in</ButtonP>
                         </div>
                     </form>
 
-                    <ButtonP onClick={handleRegister}>
+                    <ButtonP onClick={handleRegister} className="w-full">
                     New Here? Register
                     </ButtonP>
                 </div>

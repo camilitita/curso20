@@ -30,13 +30,13 @@ function Register() {
         navigate('/')
     };
     return (
-        <div className="min-h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: 'url(https://images5.alphacoders.com/128/1285059.jpg)' }}>
+        <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-cover bg-center" style={{ backgroundImage: 'url(https://images5.alphacoders.com/128/1285059.jpg)' }}>
             <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-md w-full bg-transparent p-6 rounded-lg shadow-lg">
-                <div className="max-w-md mx-auto p-4 rounded-md bg-black/70 text-white shadow-xl shadow-black/60">
+                <div className="w-full max-w-sm sm:max-w-md lg:max-w-lg p-4 rounded-md bg-black/70 text-white shadow-xl shadow-black/60">
                     <h2 className="text-4xl font-handjet font-medium text-center mb-4 text-rickgreen">Create Your Account</h2>
                     <form onSubmit={handleSubmit}>
                         <input
@@ -45,7 +45,7 @@ function Register() {
                             placeholder="First Name"
                             value={DatafromForm.name}
                             onChange={handleData}
-                            className="w-full p-2 mb-2 border border-green-600  rounded"
+                            className="w-full p-2 mb-2 border border-green-600  rounded  focus:outline-none focus:ring-2 focus:ring-green-500"
                             required
                         />
                         <input
@@ -54,7 +54,7 @@ function Register() {
                             placeholder="Last Name"
                             value={DatafromForm.last_name}
                             onChange={handleData}
-                            className="w-full p-2 mb-2 border  border-green-600 rounded"
+                            className="w-full p-2 mb-2 border  border-green-600 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
                             required
                         />
                         <input
@@ -63,7 +63,7 @@ function Register() {
                             placeholder="Email"
                             value={DatafromForm.email}
                             onChange={handleData}
-                            className="w-full p-2 mb-2 border  border-green-600  rounded"
+                            className="w-full p-2 mb-2 border  border-green-600  rounded focus:outline-none focus:ring-2 focus:ring-green-500"
                             required
                         />
                         <input
@@ -72,10 +72,10 @@ function Register() {
                             placeholder="Password"
                             value={DatafromForm.password}
                             onChange={handleData}
-                            className="w-full p-2 mb-2 border border-green-600 rounded"
+                            className="w-full p-2 mb-2 border border-green-600 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
                             required
                         />
-                        <ButtonP>Register</ButtonP>
+                        <ButtonP className="w-full">Register</ButtonP>
                     </form>
                 </div>
             </motion.div>
