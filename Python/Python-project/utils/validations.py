@@ -1,8 +1,14 @@
 import re
+from utils.file_handler import read_csv
 #Users
+
+def validate_name(name):
+  return bool(re.fullmatch("^[a-zA-Z\\s]+$", name))
+
 def valid_email(email):
-  email_pattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
-  return bool(re.match(email_pattern, email))
+  email = email.strip()
+  email_pattern = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$"
+  return bool(re.fullmatch(email_pattern, email))
 
 def email_exists(email, filename="data/users.csv"):
   """Checks if the email is already registered."""
@@ -15,7 +21,7 @@ def validate_id(product_id):
 def validate_product_name(name):
   return bool(re.fullmatch("^[a-zA-Z0-9\\s]+$", name))
 def validate_price(price):
-  return bool(re.fullmatch("^\\d+(\\.\\d{1,2})?$", price))
+  return bool(re.fullmatch("^\\d+(\\.\\d{1,2})?$", str(price)))
 
 def validate_category(category):
   return bool(re.fullmatch("^[a-zA-Z0-9\\s]+$", category))

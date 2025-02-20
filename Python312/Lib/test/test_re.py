@@ -636,7 +636,7 @@ class ReTests(unittest.TestCase):
                 re.compile(r'()(?(1)\x%02x?)' % i)
 
     def test_re_groupref_overflow(self):
-        from re._constants import MAXGROUPS
+        from re_handler._constants import MAXGROUPS
         self.checkTemplateError('()', r'\g<%s>' % MAXGROUPS, 'xx',
                                 'invalid group reference %d' % MAXGROUPS, 3)
         self.checkPatternError(r'(?P<a>)(?(%d))' % MAXGROUPS,

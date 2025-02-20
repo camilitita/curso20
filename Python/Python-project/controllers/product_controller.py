@@ -9,10 +9,8 @@ from models.product import Product
 PRODUCTS_FILE = "data/products.csv"
 
 def add_product(name, price, category):
-    print(f"Inside add_product: {name}, {price}, {category}")
-
     product_id = str(uuid.uuid4())
-    created_at = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
+    created_at = datetime.today().strftime("%Y-%m-%d")
 
     new_product = Product(product_id=product_id, created_at=created_at, name=name, price=float(price), category=category)
 
@@ -107,7 +105,7 @@ def delete_product(product_name):
         print("❌ Deletion canceled.")
         return
 
-    products = [p for p in products if p["id"] != product_to_delete["id"]]
+    products = [p for p in products if p["product_id"] != product_to_delete["product_id"]]
 
     write_to_csv(PRODUCTS_FILE, products)
     print(f"✅ Product '{product_to_delete['name']}' deleted successfully!")

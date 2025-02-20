@@ -1,6 +1,6 @@
 import os
 from utils.validations import validate_product_name, validate_price
-from utils.validations import valid_email
+from utils.validations import valid_email, validate_name
 from models.product import Product
 from models.user import User
 from utils.file_handler import read_csv, write_to_csv
@@ -119,8 +119,11 @@ def user_menu():
       phone = input("Enter phone number: ")
       address = input("Enter address: ")
 
-      add_user(name, email, phone, address)
-      input("\n✅ User added successfully! Press Enter to continue.")
+      added = add_user(name, email, phone, address)
+      if added:
+        input("\n✅ User added successfully! Press Enter to continue.")
+      else:
+        input("\n❌ Failed to add user! Press Enter to retry.")
 
     elif choice == "2":
       name = input("\nEnter user name to update: ")
@@ -132,16 +135,16 @@ def user_menu():
       delete_user(name)
       input("\n✅ User deleted successfully! Press Enter to continue.")
 
-    elif choice == "4":
-      query = input("\nEnter user name or email to search: ")
-      results = search_user(query)
-      print("\n🔍 Search Results:")
-      paginate(results)
+    #elif choice == "4":
+      #query = input("\nEnter user name or email to search: ")
+      #results = search_user(query)
+      #print("\n🔍 Search Results:")
+      #paginate(results)
 
-    elif choice == "5":
-        print("\n📋 User List:")
-        users = list_users()
-        paginate(users)
+    #elif choice == "5":
+        #print("\n📋 User List:")
+        #users = list_users()
+        #paginate(users)
 
     elif choice == "6":
       break

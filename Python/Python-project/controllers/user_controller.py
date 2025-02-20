@@ -1,6 +1,10 @@
+import csv
+import os
 from models.user import User
 from utils.validations import valid_email, email_exists
 from utils.file_handler import read_csv, write_to_csv
+
+PRODUCTS_FILE="data/users.csv"
 
 def add_user(name, phone, address, email):
   if not valid_email(email):
@@ -13,15 +17,11 @@ def add_user(name, phone, address, email):
 
   new_user = User(name, phone, address, email)
 
-  users = read_csv("data/users.csv")
+  users = read_csv(PRODUCTS_FILE)
 
-  users.append({"name": new_user.name,
-                "phone": new_user.phone,
-                "address": new_user.address,
-                "email": new_user.email,
-                "created_at": new_user.created_at})
+  users.append(new_user.to_dict())
 
-  write_to_csv("data/users.csv", users, ["name", "phone", "address", "email","created_at"])
+  write_to_csv(PRODUCTS_FILE, [new_user.to_dict()])
   print("User added successfully!")
   return True
 
